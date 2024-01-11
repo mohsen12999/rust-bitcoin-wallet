@@ -1,16 +1,13 @@
-fn main() {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("Hello, world!");
 
     dotenv::from_filename(".env").ok();
     dotenv::dotenv().ok();
 
-    let result_descriptor = std::env::var("WALLET_DESCRIPTOR ");
-
-    let descriptor = match result_descriptor {
-        Ok(descriptor) => descriptor,
-        Err(e) => panic!("Error: {}", e),
-    };
+    let descriptor = std::env::var("WALLET_DESCRIPTOR ")?;
     
     print!("Descriptor: {}", descriptor);
     dbg!(descriptor);
+
+    Ok(())
 }
