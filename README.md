@@ -10,3 +10,4 @@
 
 - add new project: `cargo new rust-bitcoin-wallet`
 - add dotenv package: `cargo add dotenv`
+- add anyhow package: `cargo add anyhow`
